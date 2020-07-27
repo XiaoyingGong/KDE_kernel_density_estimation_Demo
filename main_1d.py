@@ -12,7 +12,7 @@ import kde_1d
 
 # ----------------------------------- create data 生成数据 -----------------------------------
 def standard_normal():
-    data = np.random.randn(20000)
+    data = np.random.randn(2000)
     return data
 
 def mixture_normal():
@@ -22,7 +22,7 @@ def mixture_normal():
     return data
 
 data = standard_normal()
-x = np.linspace(-10, 10, 500).reshape(-1, 1)
+x = np.linspace(-10, 10, 2000).reshape(-1, 1)
 
 # ----------------------------------- fit data 进行拟合 -----------------------------------
 time_1 = time.time()
