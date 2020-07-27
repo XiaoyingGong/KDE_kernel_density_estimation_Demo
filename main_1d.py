@@ -21,8 +21,8 @@ def mixture_normal():
     data = np.hstack((data_1, data_2))
     return data
 
-data = mixture_normal()
-x = np.linspace(-10, 10, 10000).reshape(-1, 1)
+data = standard_normal()
+x = np.linspace(-10, 10, 500).reshape(-1, 1)
 
 # ----------------------------------- fit data 进行拟合 -----------------------------------
 time_1 = time.time()

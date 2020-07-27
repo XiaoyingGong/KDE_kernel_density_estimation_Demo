@@ -13,19 +13,10 @@ def gauss_kernel(x):
 def get_kde(x, data, h, kernel_fun):
     data_N = len(data)
     x_N = len(x)
-    x_new = np.zeros([x_N, data_N])
     x = x.reshape([-1, 1])
-    time_1 = time.time()
-    x_new = np.tile(x, [1, data_N])
-    time_2 = time.time()
-    x_new = (x_new - np.tile(data, [x_N, 1])) / h
-    time_3 = time.time()
-    K = (1/(data_N * h)) * np.sum(kernel_fun(x_new), axis=1)
-    time_4 = time.time()
-
-    print("time_1:", time_2 - time_1)
-    print("time_2:", time_3 - time_2)
-    print("time_3:", time_4 - time_3)
+    x = np.tile(x, [1, data_N])
+    x = (x - np.tile(data, [x_N, 1])) / h
+    K = (1/(data_N * h)) * np.sum(kernel_fun(x), axis=1)
     return K
 
 def h_determination(data):
