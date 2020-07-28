@@ -38,7 +38,7 @@ def mixture_normal_2():
 
 data = mixture_normal_2()
 
-x, y = np.mgrid[-8:8:0.5, -8:8:0.5]
+x, y = np.mgrid[-5:5:0.5, -5:5:0.5]
 print(x.shape)
 x = x.flatten().reshape(-1, 1)
 y = y.flatten().reshape(-1, 1)
@@ -48,8 +48,8 @@ h = kde_2d.h_determination(data)
 h = np.array([0.01, 0.01])
 print(h)
 result = kde_2d.get_kde_2d(x, data, h, kde_2d.gauss_kernel)
-result = result.reshape([32, 32])
-plt.hist2d(x=data[:, 0], y=data[:, 1], bins=50)
-x, y = np.mgrid[-8:8:0.5, -8:8:0.5]
+result = result.reshape([20, 20])
+plt.hist2d(x=data[:, 0], y=data[:, 1], bins=40)
+x, y = np.mgrid[-5:5:0.5, -5:5:0.5]
 plt.contour(x, y, result, cmap='gray_r')
 plt.show()

@@ -22,7 +22,7 @@ def mixture_normal():
     return data
 
 data = standard_normal()
-x = np.linspace(-10, 10, 2000).reshape(-1, 1)
+x = np.linspace(-10, 10, 1000).reshape(-1, 1)
 
 # ----------------------------------- fit data 进行拟合 -----------------------------------
 time_1 = time.time()
