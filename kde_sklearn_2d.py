@@ -26,12 +26,14 @@ def mixture_normal():
     data = np.vstack((data_1, data_2))
     return data
 
+
+
 def h_determination(data):
     _, dim = data.shape
     h = np.zeros(dim)
     data_len = len(data)
     for i in range(dim):
-        h[i] = 1.05 * np.std(data[:, i]) * data_len ** (-1 / 5)
+        h[i] = 1.05 * np.std(data[:, i]) * data_len ** (-1 /6)
     return h
 
 x, y = np.mgrid[-10:10:0.5, -10:10:0.5]
