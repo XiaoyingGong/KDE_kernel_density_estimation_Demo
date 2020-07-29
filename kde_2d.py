@@ -1,7 +1,7 @@
 # author: 龚潇颖(Xiaoying Gong)
 # date： 2020/7/27 21:11  
 # IDE：PyCharm 
-# des:
+# des: Have some problems in this implementation.
 # input(s)：
 # output(s)：
 import numpy as np

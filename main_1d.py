@@ -9,19 +9,9 @@ import numpy as np
 import time
 import matplotlib.pyplot as plt
 import kde_1d
+import generate_data
 
-# ----------------------------------- create data 生成数据 -----------------------------------
-def standard_normal():
-    data = np.random.randn(2000)
-    return data
-
-def mixture_normal():
-    data_1 = np.random.normal(0, 1, 2500)
-    data_2 = np.random.normal(5, 2, 2500)
-    data = np.hstack((data_1, data_2))
-    return data
-
-data = standard_normal()
+data = generate_data.standard_normal_1d(2000)
 x = np.linspace(-10, 10, 1000).reshape(-1, 1)
 
 # ----------------------------------- fit data 进行拟合 -----------------------------------
