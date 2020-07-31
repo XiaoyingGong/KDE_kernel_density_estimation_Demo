@@ -33,3 +33,35 @@ def mixture_normal_2d(num):
     data = np.vstack((data_1, data_2))
     return data
 
+
+def uniform_2d(num):
+    data_1 = np.random.uniform(0, 2, num)
+    data_2 = np.random.uniform(0, 2, num)
+    data = np.vstack((data_1, data_2))
+    return data.T
+
+
+def mixture_normal_3d(num):
+    mus_1 = np.array([0, 0, 0])
+    sigmas_1 = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
+    data_1 = np.random.multivariate_normal(mus_1, sigmas_1, num)
+    return data_1
+
+def mixture_normal_4d(num):
+    mus_1 = np.zeros(4)
+    sigmas_1 =  np.identity(4)
+    data_1 = np.random.multivariate_normal(mus_1, sigmas_1, num)
+    return data_1
+
+def mixture_normal_5d(num):
+    mus_1 = np.zeros(5)
+    sigmas_1 =  np.identity(5)
+    data_1 = np.random.multivariate_normal(mus_1, sigmas_1, num)
+    return data_1
+
+def mixture_normal_6d(num):
+    mus_1 = np.zeros(6)
+    sigmas_1 = np.identity(6)
+    data_1 = np.random.multivariate_normal(mus_1, sigmas_1, num)
+    return data_1
+
