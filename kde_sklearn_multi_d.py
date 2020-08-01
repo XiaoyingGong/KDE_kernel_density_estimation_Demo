@@ -14,11 +14,13 @@ import generate_data
 class KDE:
     def __init__(self, data):
         self.data = data
-        self.kde = KernelDensity(kernel='gaussian', bandwidth=self.h_determination).fit(data)
 
     def fit_data(self):
-        return
-    def get_kde(self, x):
+        h = self.h_determination()
+        self.kde = KernelDensity(kernel='gaussian', bandwidth=h).fit(self.data)
+        return self
+
+    def get_pdf(self, x):
         pdf = np.exp(self.kde.score_samples(x))
         return pdf
 

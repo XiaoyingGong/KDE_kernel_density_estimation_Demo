@@ -9,7 +9,8 @@ import generate_data
 import numpy as np
 
 data_6d = generate_data.mixture_normal_6d(500)
-print(data_6d.shape)
 kde_6d = KDE(data_6d)
+kde_6d = kde_6d.fit_data()
 pdf = kde_6d.get_pdf(np.array([[0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1], [2, 2, 2, 2, 2, 2]]))
-print(pdf)
+a, b = kde_6d.get_rank_pdf(0.5)
+print(a)
